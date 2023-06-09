@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Все заметки</title>
+</head>
+<body>
+    <tr th:each="note: ${notes}">
+        <p th:text="${note.message}"></p>
+        <br>
+        <h5 th:text="${note.date}"></h5>
+        <br>
+        <br>
+            <a th:href="@{note/delete/{id}(id=${note.id})}">Удалить</a>
+        <br>
+        <br>
+        <a th:href="@{note/update/{id}(id=${note.id})}">Обновить</a>
+    </tr>
+</body>
+</html>
